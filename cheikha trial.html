@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Restaurant Menu</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: #2e2c2c;
+  color: #fff;
+}
+.section-title {
+  scroll-margin-top: 110px;
+}
+
+
+/* ===== TOP BAR ===== */
+.topbar {
+  background: linear-gradient(135deg, #ffffff, #ffffff);
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 20px rgba(255,80,0,0.6);
+}
+
+.logo img {
+  height:70px;
+  object-fit: contain;
+}
+
+.nav {
+  display: flex;
+  gap: 30px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #da6f11;
+  font-weight: bold;
+}
+
+/* ===== CATEGORY BAR ===== */
+.categories {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: #111;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  border-bottom: 2px solid #ff4500;
+}
+
+.categories a {
+  text-decoration: none;
+  padding: 10px 18px;
+  background: linear-gradient(135deg, #ec5d28, #f27d00);
+  color: #fff;
+  font-weight: bold;
+  border-radius: 25px;
+  box-shadow: 0 0 10px rgba(223, 90, 28, 0.7);
+  transition: 0.2s;
+}
+
+.categories a:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 18px rgba(255,120,0,1);
+}
+
+/* ===== CONTENT ===== */
+.container {
+  width: 90%;
+  max-width: 900px;
+  margin: 30px auto;
+}
+
+.white-bar {
+  background: #111;
+  padding: 14px;
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 10px;
+  border: 1px solid #ff4500;
+}
+
+.whatsapp-link {
+  display: block;
+  text-decoration: none;
+  color: #ffae00;
+}
+
+/* ===== SECTION TITLE ===== */
+.section-title {
+  margin-top: 70px;
+  margin-bottom: 25px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #ffae00;
+  border-left: 6px solid #ff4500;
+  padding-left: 12px;
+}
+
+/* ===== MENU ITEM ===== */
+.menu-item {
+  margin-bottom: 25px;
+}
+
+.menu-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.price {
+  color: #ffae00;
+}
+
+.dots {
+  border-bottom: 2px dotted #444;
+  margin: 6px 0;
+}
+
+.arabic {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* ===== FLOATING CART ===== */
+.cart-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 65px;
+  height: 65px;
+  background: linear-gradient(135deg, #ff4500, #ff0000);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 26px;
+  box-shadow: 0 0 20px rgba(255,80,0,0.9);
+}
+</style>
+</head>
+
+<body>
+<script>
+  // Reset any hash scrolling on page load
+  if(window.location.hash) {
+    window.location.hash = '';
+  }
+  window.scrollTo(0, 0);
+</script>
+
+<!-- TOP BAR -->
+<div class="topbar">
+<a class="logo" href="https://www.instagram.com/cheikha1984/" target="_blank">
+  <img src="cheikha.png" alt="Cheikha Logo">
+</a>
+
+<div class="nav">
+<a href="#" onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'}); return false;">MENUS</a>
+
+  <a href="https://www.google.com/search?sca_esv=18c82b472cdad13f&sxsrf=ANbL-n5F2NOonOjy0p2DSmAbIyD-i-eYfg:1768766481541&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOcug_NDm_vzGKVXrt9_tzLg0jgSrcIwYAEwaExlWWR--WxVq0HQiHZbDrkMITkeWe6apZJxAtFzcD0NJbDQgy4ZX-3In&q=Cheikha+Reviews&sa=X&ved=2ahUKEwj2r8rO8JWSAxW3TqQEHSkIKrgQ0bkNegQIMBAF&biw=1536&bih=695&dpr=1.25&aic=0" target="_blank">REVIEWS</a>
+  <a href="about.html">ABOUT</a>
+  
+</div>
+
+</div>
+
+<!-- CATEGORY BUTTONS -->
+<div class="categories">
+  <a href="#starters">Starters/مقبلات </a>
+  <a href="#rawmeat">RawMeat/ني </a>
+  <a href="#sandwich">Sandwich/سندويش </a>
+  <a href="#shawarma">Shawarma/الشاورما </a>
+  <a href="#beverages">Beverages/مشروبات </a>
+  <a href="#chicken">Chicken/فروج </a>
+</div>
+
+<div class="container" id="menu">
+
+
+<a class="white-bar whatsapp-link" href="tel:01351565">CALL 01 351 565</a>
+
+ <!-- STARTERS -->
+  <div id="starters" class="section-title">مقبلات / STARTERS</div>
+ 
+    <div class="menu-item"><div class="menu-row"><div>Hommos</div><div class="price">5.50 USD</div></div><div class="dots"></div><div class="arabic">حمص</div></div>
+    <div class="menu-item"><div class="menu-row"><div>Hommos Large</div><div class="price">7.60 USD</div></div><div class="dots"></div><div class="arabic">حمص كبير</div></div>
+    <div class="menu-item"><div class="menu-row"><div>Motabbal Bathinjan</div><div class="price">6.15 USD</div></div><div class="dots"></div><div class="arabic">متبل</div></div>
+    <div class="menu-item"><div class="menu-row"><div>M Bathinjan Large</div><div class="price">8.70 USD</div></div><div class="dots"></div><div class="arabic">متبل كبير</div></div>
+    <div class="menu-item"><div class="menu-row"><div>Raheb</div><div class="price">6.15 USD</div></div><div class="dots"></div><div class="arabic">راهب</div></div>
+    <div class="menu-item"><div class="menu-row"><div>Raheb Large</div><div class="price">8.70 USD</div></div><div class="dots"></div><div class="arabic">راهب كبير</div></div>
+    <div class="menu-item"><div class="menu-row"><div>Tabboleh</div><div class="price">5.50 USD</div></div><div class="dots"></div><div class="arabic">تبولة</div></div>
+    <div class="menu-item"><div class="menu-row"><div>Taboleh Large</div><div class="price">7.80 USD</div></div><div class="dots"></div><div class="arabic">تبولة كبير</div></div>
+    <div class="menu-item"><div class="menu-row"><div>Fattoush</div><div class="price">5.50 USD</div></div><div class="dots"></div><div class="arabic">فتوش</div></div>
+    <div class="menu-item"><div class="menu-row"><div>Arabian Salad</div><div class="price">5.50 USD</div></div><div class="dots"></div><div class="arabic">سلطة عربية</div></div>
+    <div class="menu-item"><div class="menu-row"><div>Warak Inab</div><div class="price">8.90 USD</div></div><div class="dots"></div><div class="arabic">ورق عنب</div></div>
+    <div class="menu-item"><div class="menu-row"><div>Hindbeh</div><div class="price">6.70 USD</div></div><div class="dots"></div><div class="arabic">هندبة</div></div>
+    <div class="menu-item"><div class="menu-row"><div>Lubia Bil Zeit</div><div class="price">6.70 USD</div></div><div class="dots"></div><div class="arabic">لوبيا بالزيت</div></div>
+    <div class="menu-item"><div class="menu-row"><div>Hommos with Shawarma</div><div class="price">13.00 USD</div></div><div class="dots"></div><div class="arabic">حمص مع شاورما</div></div>
+    <div class="menu-item"><div class="menu-row"><div>Hommos with Meat</div><div class="price">13.00 USD</div></div><div class="dots"></div><div class="arabic">حمص على لحمة</div></div>
+
+    
+  <div id="rawmeat" class="section-title">ني / Raw Meat</div>
+    <div class="menu-item"><div class="menu-row"><div>Sawda Nayeh</div><div class="price">11.20 USD</div></div><div class="dots"></div><div class="arabic">صحن سودة نية</div></div>
+    <div class="menu-item"><div class="menu-row"><div>Kebbha Nayeh</div><div class="price">11.20 USD</div></div><div class="dots"></div><div class="arabic">كبة نية وقية</div></div>
+    <div class="menu-item"><div class="menu-row"><div>Habra Nayeh</div><div class="price">11.20 USD</div></div><div class="dots"></div><div class="arabic">صحن هبرة نية</div></div>
+    <div class="menu-item"><div class="menu-row"><div>Raw Meat</div><div class="price">12.30 USD</div></div><div class="dots"></div><div class="arabic">صحن فيلة نية</div></div>
+    <div class="menu-item"><div class="menu-row"><div>Kafta Nayeh</div><div class="price">11.20 USD</div></div><div class="dots"></div><div class="arabic">صحن كفتة نية</div></div>
+    <div class="menu-item"><div class="menu-row"><div>Mixed Nayeh Platte</div><div class="price">48.30 USD</div></div><div class="dots"></div><div class="arabic">خشبة نية مشكل</div></div>
+    <div class="menu-item"><div class="menu-row"><div>Extra Mixed Nayeh Plate</div><div class="price">55.00 USD</div></div><div class="dots"></div><div class="arabic">خشبة نية مشكل اكسترا</div></div>
+<div class="menu-item"><div class="menu-row"><div>Habra Nayeh (Kilo)</div><div class="price">50.00 USD</div></div><div class="dots"></div><div class="arabic">كيلو هبرة نية</div></div>
+<div class="menu-item"><div class="menu-row"><div>Kebba Nayeh (Kilo)</div><div class="price">50.00 USD</div></div><div class="dots"></div><div class="arabic">كيلو كبة نية</div></div>
+<div class="menu-item"><div class="menu-row"><div>Swada Nayeh (Kilo)</div><div class="price">50.00 USD</div></div><div class="dots"></div><div class="arabic">كيلو سودة نية</div></div>
+<div class="menu-item"><div class="menu-row"><div>Fitileh Nayeh (Kilo)</div><div class="price">53.90 USD</div></div><div class="dots"></div><div class="arabic">كيلو فتيلة نية</div></div>
+<div class="menu-item"><div class="menu-row"><div>Kafta Nayeh (Kilo)</div><div class="price">50.00 USD</div></div><div class="dots"></div><div class="arabic">كيلو كفتة نية</div></div>
+<div id="sandwich" class="section-title">سندويش / Sandwich</div>
+
+<div class="menu-item"><div class="menu-row"><div>Shukaf</div><div class="price">7.80 USD</div></div><div class="dots"></div><div class="arabic">سندويش شقف</div></div>
+<div class="menu-item"><div class="menu-row"><div>Tawouk</div><div class="price">5.60 USD</div></div><div class="dots"></div><div class="arabic">سندويش طاووق</div></div>
+<div class="menu-item"><div class="menu-row"><div>Kafta</div><div class="price">6.20 USD</div></div><div class="dots"></div><div class="arabic">سندويش كفتة</div></div>
+<div class="menu-item"><div class="menu-row"><div>Kabab Halabi</div><div class="price">6.20 USD</div></div><div class="dots"></div><div class="arabic">كباب حلبي</div></div>
+<div class="menu-item"><div class="menu-row"><div>Kabab Khishkhash</div><div class="price">6.20 USD</div></div><div class="dots"></div><div class="arabic">كباب خشخاش</div></div>
+<div class="menu-item"><div class="menu-row"><div>Kabab Orfali</div><div class="price">6.20 USD</div></div><div class="dots"></div><div class="arabic">كباب أورفلي</div></div>
+<div class="menu-item"><div class="menu-row"><div>Kabab Bathinjan</div><div class="price">6.20 USD</div></div><div class="dots"></div><div class="arabic">كباب باتنجان</div></div>
+<div class="menu-item"><div class="menu-row"><div>Chicken Sandwich</div><div class="price">6.75 USD</div></div><div class="dots"></div><div class="arabic">سندويش دجاج</div></div>
+<div class="menu-item"><div class="menu-row"><div>Kabab Entabli</div><div class="price">6.20 USD</div></div><div class="dots"></div><div class="arabic">كباب عنتبلي</div></div>
+<div class="menu-item"><div class="menu-row"><div>Kebba Meshwieh</div><div class="price">6.20 USD</div></div><div class="dots"></div><div class="arabic">كبة مشوية</div></div>
+<div class="menu-item"><div class="menu-row"><div>Sawda Meshwieh</div><div class="price">6.20 USD</div></div><div class="dots"></div><div class="arabic">سودة مشوية</div></div>
+<div class="menu-item"><div class="menu-row"><div>Swada Nayeh</div><div class="price">6.20 USD</div></div><div class="dots"></div><div class="arabic">سودة نية</div></div>
+<div class="menu-item"><div class="menu-row"><div>Makanek Meshwieh</div><div class="price">6.20 USD</div></div><div class="dots"></div><div class="arabic">سندويش مقانق</div></div>
+<div class="menu-item"><div class="menu-row"><div>Sejuk Meshwieh</div><div class="price">5.60 USD</div></div><div class="dots"></div><div class="arabic">سندويش سجق</div></div>
+<div class="menu-item"><div class="menu-row"><div>Beeftek Sandwich</div><div class="price">6.70 USD</div></div><div class="dots"></div><div class="arabic">سندويش بفتاك</div></div>
+<div class="menu-item"><div class="menu-row"><div>Escalop Sandwich</div><div class="price">6.20 USD</div></div><div class="dots"></div><div class="arabic">سندويش أسكالوب</div></div>
+<div class="menu-item"><div class="menu-row"><div>Beid Ghanam</div><div class="price">6.20 USD</div></div><div class="dots"></div><div class="arabic">بيض غنم</div></div>
+<div class="menu-item"><div class="menu-row"><div>Rosto Sandwich</div><div class="price">7.80 USD</div></div><div class="dots"></div><div class="arabic">سندويش روستو</div></div>
+<div class="menu-item"><div class="menu-row"><div>Nekhaa</div><div class="price">7.80 USD</div></div><div class="dots"></div><div class="arabic">سندويش نخاع</div></div>
+<div class="menu-item"><div class="menu-row"><div>Helewat</div><div class="price">6.20 USD</div></div><div class="dots"></div><div class="arabic">حليوات</div></div>
+<div class="menu-item"><div class="menu-row"><div>Sawda Chicken</div><div class="price">6.00 USD</div></div><div class="dots"></div><div class="arabic">سودة دجاج</div></div>
+<div class="menu-item"><div class="menu-row"><div>Sawda Chicken Fried</div><div class="price">6.20 USD</div></div><div class="dots"></div><div class="arabic">سوده دجاج مقليه</div></div>
+<div class="menu-item"><div class="menu-row"><div>Kalawi Sandwich</div><div class="price">5.60 USD</div></div><div class="dots"></div><div class="arabic">سندويش كلاوي</div></div>
+<div class="menu-item"><div class="menu-row"><div>Habra Nayeh</div><div class="price">5.60 USD</div></div><div class="dots"></div><div class="arabic">هبرة نية</div></div>
+<div class="menu-item"><div class="menu-row"><div>Habra Meshwieh</div><div class="price">6.20 USD</div></div><div class="dots"></div><div class="arabic">هبرة مشوية</div></div>
+<div class="menu-item"><div class="menu-row"><div>Raw Meat</div><div class="price">6.70 USD</div></div><div class="dots"></div><div class="arabic">لحمة نية</div></div>
+<div class="menu-item"><div class="menu-row"><div>Kebba Nayeh</div><div class="price">6.20 USD</div></div><div class="dots"></div><div class="arabic">كبة نية</div></div>
+<div class="menu-item"><div class="menu-row"><div>Tawouk White</div><div class="price">5.60 USD</div></div><div class="dots"></div><div class="arabic">طاووق ابيض</div></div>
+<div class="menu-item"><div class="menu-row"><div>Kalawi</div><div class="price">5.60 USD</div></div><div class="dots"></div><div class="arabic">كلاوي</div></div>
+<div class="menu-item"><div class="menu-row"><div>Potato Sandwich</div><div class="price">4.50 USD</div></div><div class="dots"></div><div class="arabic">سندويش بطاطا</div></div>
+<div class="menu-item"><div class="menu-row"><div>Chicken Sub</div><div class="price">8.40 USD</div></div><div class="dots"></div><div class="arabic">تشكن ساب</div></div>
+<div class="menu-item"><div class="menu-row"><div>Kafta Nayeh</div><div class="price">6.20 USD</div></div><div class="dots"></div><div class="arabic">كفتة نية</div></div>
+<div class="menu-item"><div class="menu-row"><div>Chicken Kafta</div><div class="price">6.20 USD</div></div><div class="dots"></div><div class="arabic">سندويش كفتة دجاج</div></div>
+<div class="menu-item"><div class="menu-row"><div>Fried Sawda</div><div class="price">6.20 USD</div></div><div class="dots"></div><div class="arabic">سودة غنم مقلية</div></div>
+<div id="shawarma" class="section-title">الشاورما / Shawarma</div>
+
+
+<div class="menu-item"><div class="menu-row"><div>Shawarma Meat Small</div><div class="price">5.00 USD</div></div><div class="dots"></div><div class="arabic">شاورما لحمة صغير</div></div>
+<div class="menu-item"><div class="menu-row"><div>Shawarma Meat Large</div><div class="price">6.20 USD</div></div><div class="dots"></div><div class="arabic">شاورما لحمة كبير</div></div>
+<div class="menu-item"><div class="menu-row"><div>Chicken Shawarma Small</div><div class="price">5.00 USD</div></div><div class="dots"></div><div class="arabic">شاورما دجاج صغير</div></div>
+<div class="menu-item"><div class="menu-row"><div>Chicken Shawarma Large</div><div class="price">6.20 USD</div></div><div class="dots"></div><div class="arabic">شاورما دجاج كبير</div></div>
+<div class="menu-item"><div class="menu-row"><div>Plate Shawarma Meat</div><div class="price">15.60 USD</div></div><div class="dots"></div><div class="arabic">صحن شاورما لحمة</div></div>
+<div class="menu-item"><div class="menu-row"><div>Plate Shawarma Chicken</div><div class="price">15.50 USD</div></div><div class="dots"></div><div class="arabic">صحن شاورما دجاج</div></div>
+<div class="menu-item"><div class="menu-row"><div>Mixed Shawarma Plate</div><div class="price">15.70 USD</div></div><div class="dots"></div><div class="arabic">صحن ونصف شاورما</div></div>
+<div class="menu-item"><div class="menu-row"><div>1.5 Plate Shawarma Meat</div><div class="price">19.60 USD</div></div><div class="dots"></div><div class="arabic">صحن ونصف شاورما لحمة</div></div>
+<div class="menu-item"><div class="menu-row"><div>1.5 Plate Shawarma Chicken</div><div class="price">19.00 USD</div></div><div class="dots"></div><div class="arabic">صحن ونصف شاورما دجاج</div></div>
+<div class="menu-item"><div class="menu-row"><div>Kilo Shawarma Meat</div><div class="price">56.20 USD</div></div><div class="dots"></div><div class="arabic">كيلو شاورما لحمة</div></div>
+<div class="menu-item"><div class="menu-row"><div>Kilo Shawarma Chicken</div><div class="price">54.00 USD</div></div><div class="dots"></div><div class="arabic">كيلو شاورما دجاج</div></div>
+<div class="menu-item"><div class="menu-row"><div>Kilo Shawarma Mixed</div><div class="price">54.00 USD</div></div><div class="dots"></div><div class="arabic">كيلو شاورما لحمة و دجاج</div></div>
+<div class="menu-item"><div class="menu-row"><div>Small Tartar</div><div class="price">2.20 USD</div></div><div class="dots"></div><div class="arabic">علبة طرطور صغيرة</div></div>
+<div class="menu-item"><div class="menu-row"><div>Large Tartar</div><div class="price">4.00 USD</div></div><div class="dots"></div><div class="arabic">علبة طرطور كبيرة</div></div>
+<div id="beverages" class="section-title">مشروبات / Beverages</div>
+
+
+<div class="menu-item"><div class="menu-row"><div>Pepsi</div><div class="price">1.12 USD</div></div><div class="dots"></div><div class="arabic">بيبسي</div></div>
+<div class="menu-item"><div class="menu-row"><div>Pepsi Diet</div><div class="price">1.12 USD</div></div><div class="dots"></div><div class="arabic">بيبسي دايت</div></div>
+<div class="menu-item"><div class="menu-row"><div>7 Up</div><div class="price">1.12 USD</div></div><div class="dots"></div><div class="arabic">سفن أب</div></div>
+<div class="menu-item"><div class="menu-row"><div>7 Up Diet</div><div class="price">1.12 USD</div></div><div class="dots"></div><div class="arabic">سفن أب دايت</div></div>
+<div class="menu-item"><div class="menu-row"><div>Mirinda</div><div class="price">1.12 USD</div></div><div class="dots"></div><div class="arabic">ميرندا</div></div>
+<div class="menu-item"><div class="menu-row"><div>Laban Ayran</div><div class="price">1.12 USD</div></div><div class="dots"></div><div class="arabic">لبن عيران</div></div>
+<div id="chicken" class="section-title">فروج / Chicken</div>
+
+
+<div class="menu-item"><div class="menu-row"><div>Half Chicken</div><div class="price">9.00 USD</div></div><div class="dots"></div><div class="arabic">نصف فروج</div></div>
+<div class="menu-item"><div class="menu-row"><div>Grilled Chicken</div><div class="price">16.85 USD</div></div><div class="dots"></div><div class="arabic">فروج على الفحم</div></div>
+<div class="menu-item"><div class="menu-row"><div>One and Half Chicken</div><div class="price">24.15 USD</div></div><div class="dots"></div><div class="arabic">فروج ونصف</div></div>
+<div class="menu-item"><div class="menu-row"><div>Whole Masahab Chicken</div><div class="price">22.30 USD</div></div><div class="dots"></div><div class="arabic">فروج مسحب كامل</div></div>
+<div class="menu-item"><div class="menu-row"><div>Fries Box</div><div class="price">4.80 USD</div></div><div class="dots"></div><div class="arabic">علبة بطاطا</div></div>
+<div class="menu-item"><div class="menu-row"><div>Garlic Box</div><div class="price">3.20 USD</div></div><div class="dots"></div><div class="arabic">علبة ثوم</div></div>
+
+  </div>
+
+
+<div id="about"></div>
+
+</body>
+</html>

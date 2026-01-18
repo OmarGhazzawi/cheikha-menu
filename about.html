@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>About Cheikha</title>
+<style>
+/* ===== GLOBAL ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #2e2c2c;
+  color: #fff;
+  line-height: 1.7;
+}
+
+/* ===== TOP BAR ===== */
+.topbar {
+  background: #ffffff;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 20px rgba(255,80,0,0.6);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo img {
+  height: 70px;
+  cursor: pointer;
+}
+
+.nav {
+  display: flex;
+  gap: 30px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #da6f11;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.nav a:hover {
+  color: #ff4500;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  width: 95%;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 40px 25px;
+  background: #1a1a1a;
+  border-radius: 12px;
+  min-height: 400px; /* default min height */
+}
+
+/* ===== SECTION TITLES ===== */
+.section-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #ffae00;
+  margin-bottom: 15px;
+  border-left: 6px solid #ff4500;
+  padding-left: 12px;
+}
+
+.section-title2 {
+  font-size: 22px;
+  font-weight: bold;
+  color: #ffae00;
+  margin-bottom: 15px;
+  border-right: 6px solid #ff4500;
+  padding-right: 12px;
+  text-align: right;
+}
+
+p {
+  margin-bottom: 18px;
+  font-size: 18px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .container {
+    padding: 35px 20px;
+  }
+  .section-title, .section-title2 {
+    font-size: 20px;
+  }
+  p {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 768px) {
+  .topbar {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px 20px;
+  }
+  .nav {
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .section-title, .section-title2 {
+    font-size: 18px;
+  }
+  p {
+    font-size: 16px;
+  }
+  /* MAKE CONTAINER FULL HEIGHT ON PHONES */
+  .container {
+    min-height: calc(100vh - 80px); /* full viewport height minus topbar */
+    margin: 0 auto;
+    border-radius: 0; /* optional, no rounding on full height */
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title, .section-title2 {
+    font-size: 16px;
+  }
+  p {
+    font-size: 14px;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <a class="logo" href="index.html">
+    <img src="cheikha.png" alt="Cheikha Logo">
+  </a>
+  <div class="nav">
+    <a href="cheikha trial.html">MENUS</a>
+    <a href="https://www.google.com/search?q=Cheikha+Reviews" target="_blank">REVIEWS</a>
+    <a href="about.html">ABOUT</a>
+  </div>
+</div>
+
+<!-- ABOUT CONTENT -->
+<div class="container">
+  <div class="section-title">About Cheikha</div>
+  <p>Cheikha is a well‑known Lebanese restaurant and grill located in the heart of Hamra, Beirut, famous for its flavorful shawarma, grilled meats, and generous portions. Locals and visitors appreciate the fresh quality of the meats, the delicious taouk seasoning, and the variety of traditional Lebanese sandwiches and mixed grills. The team at Cheikha focuses on serving tasty, satisfying meals at fair prices and with friendly service in a casual setting, making it a favorite stop for quick bites, takeaway, and hearty meals alike. Many customers praise the shawarma and mixed grill meats for their freshness and rich flavor.</p>
+
+  <div class="section-title2">نبذة عن شيخة</div>
+  <p>مطعم شيخة هو مطعم لبناني مشهور للمشاوي والشاورما في قلب الحمرا – بيروت، يتميز بتقديم شاورما لذيذة، وأصناف متنوعة من اللحوم المشوية، والمشاوي المختلطة، إلى جانب السندويشات اللبنانية التقليدية. يشيد الزبائن بجودة اللحوم الطازجة، ونكهة بهارات الطاووق، والتشكيلة الكبيرة من الأطباق التي تقدم قيمة ممتازة مقابل السعر. موقعه الحيوي في الحمرا وسماعته في تقديم الأكلات اللبنانية يجعلان منه وجهةً مفضلةً للمقيمين والسياح على حدٍّ سواء.</p>
+</div>
+
+</body>
+</html>
